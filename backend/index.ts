@@ -1,15 +1,20 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+const express = require("express")
+const app = express()
 
-dotenv.config();
+// Database config
+const connection = require('./config/db')
+connection.once('open', () => console.log('DB Connected'))
+connection.on('error', () => console.log('Error'))
 
-const app: Express = express();
-const port = process.env.PORT;
+// Routes Config
+app.use(express.json({
+  extended: false
+})) //parse incoming request body in JSON format.
+app.use('/', require('./routes/redirect'))
+app.use('/api/url', require('./routes/url'))
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+
+app.listen(6511, ()=> {
+  console.log("Backend server is running on port 6511 " );
 });
-
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
-});
+export { };
