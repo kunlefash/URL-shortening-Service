@@ -1,19 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//@ts-nocheck
+import Layout from "../src/components/Layout";
+import style from "../src/styles/Home.module.scss";
+import Link from "next/link";
+import UrlShortener from "../src/components/UrlShortener";
+import ShortenUrl from "../src/components/ShortenUrl";
+import { useContext, useState } from "react";
+import { FirebaseContext } from "../src/logic/context";
+import { BackendContext } from "../src/logic/backendContext";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const Home = () => {
+  // context data
+  const { urls } = useContext(BackendContext);
+  return (
+    <Layout pageTitle="Home">
+      <>
+        <div className={style.container}>
+          <div className={style.copy_right}>
+            <h1>More then just shorter links</h1>
+            <p>
+              Build your brand's recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <div className={style.btn}>
+              <Link href="#start">Get Started</Link>
+            </div>
+          </div>
+          <div className={style.img}>
+            <img
+              src="/images/illustration-working.svg"
+              alt="illustration-working"
+            />
+          </div>
+        </div>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+        <section className={style.main} id="start">
+          <UrlShortener />
+          {/* Show the converted url */}
+          {urls && (
+            <ShortenUrl longUrl={urls.longUrl} shortUrl={urls.shortUrl} />
+          )}
+        </section>
+      </>
+    </Layout>
+  );
+};
+
+export default Home;

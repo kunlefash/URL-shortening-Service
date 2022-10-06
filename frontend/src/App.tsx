@@ -1,10 +1,18 @@
+//@ts-nocheck
 import React from 'react';
 import logo from './logo.svg';
+import BackendContextProvider from "../src/logic/backendContext"
+import FirebaseContextProvider from "../src/logic/context";
 import './App.css';
 
-function App() {
+
+function App(Component , pageProps) {
   return (
-    <div>URL shortener</div>
+    <FirebaseContextProvider>
+      <BackendContextProvider>
+        <Component {...pageProps} />
+      </BackendContextProvider>
+    </FirebaseContextProvider>
   );
 }
 

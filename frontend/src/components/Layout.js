@@ -5,7 +5,7 @@ function Layout({ pageTitle, children }) {
   return (
     <div>
       <Head>
-        <title>{pageTitle} | Lil Link </title>
+        <title>{pageTitle} | URL Shortener </title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <Navbar />

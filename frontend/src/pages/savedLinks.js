@@ -13,7 +13,6 @@ function SavedLinks() {
     <Layout>
       <div className={style.container}>
         <h1>Your saved links</h1>
-
         {docs.length ? (
           docs.map((doc) => {
             return (

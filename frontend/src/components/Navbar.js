@@ -37,12 +37,9 @@ function Navbar() {
   return (
     <nav className={style.nav}>
       <div className={style.logo}>
-        <span>Lil Link</span>
+        <span>URL shortener</span>
       </div>
       <div className={style.menu_btn} onClick={() => setShow(!show)}>
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
       <ul className={cx(style.nav_links, show ? style.show : style.hide)}>
         <li>

@@ -11,7 +11,7 @@ const UrlShortener = () => {
   //show border upon error
   const [errorBorder, setErrorBorder] = useState(style.no_error);
 
-  //Dymainc show of error message
+  //Dynamic show of error message
   const [isError, setIsError] = useState(null);
 
   const [url, setUrl] = useState("");
