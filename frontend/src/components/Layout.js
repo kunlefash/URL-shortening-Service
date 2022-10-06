@@ -8,9 +8,7 @@ function Layout({ pageTitle, children }) {
         <title>{pageTitle} | Lil Link </title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
-
       <Navbar />
-
       {children}
     </div>
   );
