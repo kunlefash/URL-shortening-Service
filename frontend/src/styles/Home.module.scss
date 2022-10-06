@@ -1,0 +1,87 @@
+@import "./shared/utils.scss";
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+// copy right styling
+.copy_right {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 600px;
+
+  h1 {
+    font-size: 5rem;
+    color: $textColor;
+  }
+  p {
+    font-size: 1.5rem;
+    color: gray;
+    line-height: 2rem;
+  }
+
+  .btn {
+    background-color: $bgColor;
+    display: inline-block;
+    padding: 15px 25px;
+    margin-top: 40px;
+    border-radius: 25px;
+
+    a {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Illustration image
+.img {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+
+// main section
+.main {
+  margin-top: 50px;
+  height: 100vh;
+  background-color: rgba(105, 105, 105, 0.199);
+  padding-top: 40px;
+}
+
+// mobile styling
+@media screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+  }
+  .copy_right {
+    order: 2;
+    width: 100%;
+    margin: 15px 0;
+    padding: 20px;
+    text-align: center;
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+
+  .img {
+    order: 1;
+    width: 100%;
+    padding: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .main {
+    padding: 10px;
+  }
+}

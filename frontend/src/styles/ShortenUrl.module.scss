@@ -1,0 +1,77 @@
+@import "./shared/utils.scss";
+
+.container {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shorten_url,
+.long_url {
+  font-size: 1.3rem;
+}
+.long_url {
+  width: 500px;
+  p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.shorten_url {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+
+  p {
+    margin-right: 10px;
+    color: $bgColor;
+  }
+  button {
+    padding: 10px 25px;
+    border: none;
+    font-size: 1.3rem;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.copy {
+  background-color: $bgColor;
+}
+.copied {
+  background-color: rgb(77, 2, 77);
+}
+
+//media styling
+@media screen and(max-width: 640px) {
+  .container {
+    width: auto;
+    flex-direction: column;
+  }
+  .shorten_url,
+  .long_url {
+    width: 100%;
+  }
+
+  .long_url {
+    height: 25px;
+  }
+
+  .shorten_url {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+}

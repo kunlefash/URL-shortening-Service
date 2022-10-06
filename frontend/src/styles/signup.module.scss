@@ -1,0 +1,56 @@
+@import "./shared/utils.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: rgb(77, 2, 77);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+
+  p {
+    color: rgb(252, 10, 51);
+    font-weight: 300;
+    font-style: italic;
+  }
+  label {
+    margin-top: 10px;
+  }
+
+  input {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+
+  button {
+    padding: 10px 25px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: $bgColor;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 1rem;
+
+    a {
+      color: $bgColor;
+    }
+  }
+}
+
+@media screen and (max-width) {
+  .container {
+    padding: 0 20px;
+  }
+}

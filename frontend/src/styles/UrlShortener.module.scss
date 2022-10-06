@@ -1,0 +1,59 @@
+@import "./shared/utils.scss";
+.container {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: rgb(77, 2, 77);
+  padding: 30px 50px;
+  border-radius: 10px;
+
+  input,
+  button {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+  }
+  input {
+    width: 700px;
+    margin-right: 10px;
+    padding-left: 20px;
+  }
+  button {
+    width: 180px;
+    color: #fff;
+    font-weight: 600;
+    background-color: $bgColor;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.no_error {
+  border: none;
+}
+.error {
+  border: 2px solid rgb(245, 41, 75);
+}
+
+.error_message {
+  color: rgb(245, 41, 75);
+  margin-top: 20px;
+}
+
+//mobile styling
+@media screen and (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding: 20px 20px;
+    input {
+      width: 100%;
+      margin: 0;
+    }
+    button {
+      width: 100%;
+      display: block;
+      margin-top: 20px;
+    }
+  }
+}
