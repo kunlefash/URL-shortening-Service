@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const DB_URI = 'mongodb://localhost:27017/urlshortener'
 
 mongoose.connect(DB_URI, {
