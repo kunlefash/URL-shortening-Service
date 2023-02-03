@@ -10,12 +10,11 @@ router.post('/shorten', async (req, res) => {
         longUrl
     } = req.body
 
-    // check base url if valid using the validUrl.isUri method
+    // Check base url if valid using the validUrl.isUri method
     if (!validUrl.isUri(baseUrl)) {
-        return res.status(401).json('Invalid base URL')
+        return res.status(401).json('URL is Invalid')
     }
-
-    // if valid, we create the url code
+    //Generates Short Url if Url is valid
     const urlCode = shortid.generate()
 
     // check long url if valid using the validUrl.isUri method

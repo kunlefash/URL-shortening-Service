@@ -12,16 +12,13 @@ router.get('/:code', async (req, res) => {
         } else {
             return res.status(404).json('No URL Found')
         }
-
     }
-    // exception handler
+    // Exception Handler
     catch (err) {
         console.error(err)
         res.status(500).json('Server Error')
     }
 })
 
-
 module.exports = router
-
 export { };
