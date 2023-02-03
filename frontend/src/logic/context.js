@@ -1,7 +1,6 @@
 import { useState, createContext } from "react";
 import { auth, firestoreDB } from "../firebase/config";
 
-// ------------------FIREBASE CONTEXT-------------------//
 
 export const FirebaseContext = createContext();
 
