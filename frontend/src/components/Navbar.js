@@ -5,9 +5,8 @@ import style from "../styles/Navbar.module.scss";
 import cx from "classnames";
 
 function Navbar() {
-  // --------------CONTEXT------------//
-  const { userStatus, signUserOut } = useContext(FirebaseContext);
 
+  const { userStatus, signUserOut } = useContext(FirebaseContext);
   const LoggedOutLinks = () => {
     return (
       <>

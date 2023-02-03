@@ -4,19 +4,18 @@ import { BackendContext } from "../logic/backendContext";
 import { FirebaseContext } from "../logic/context";
 
 const UrlShortener = () => {
-  //context
+
   const { createShortUrlFromLongUrl } = useContext(BackendContext);
   const { saveUrlToDB, userStatus } = useContext(FirebaseContext);
 
-  //show border upon error
+  //Shows border upon error
   const [errorBorder, setErrorBorder] = useState(style.no_error);
 
   //Dynamic show of error message
   const [isError, setIsError] = useState(null);
-
   const [url, setUrl] = useState("");
 
-  // Handle link submition
+  //Async function handles link submission
   async function handleClick() {
     if (!url) {
       setErrorBorder(style.error);
